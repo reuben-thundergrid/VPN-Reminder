@@ -21,8 +21,10 @@
       setInterval(() => {
         fetch(window.location.href)
               .then(res => res.text())
-              .then(txt => if(!txt.includes("subduing-until-stung")) {
-                window.location.reload();
+              .then(txt => { 
+                if(!txt.includes("subduing-until-stung")) {
+                  window.location.reload();
+                }
               })
               .catch(err => console.error('Error:', err));
       }, 5000);
