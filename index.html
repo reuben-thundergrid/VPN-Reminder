@@ -10,11 +10,22 @@
     <title>Thundergrid</title>
   </head>
   <body>
+      <p hidden>subduing-until-stung</p>
       <h1>connect to the VPN to access Netbox</h1>
       <ol>
         <li>Connect to the VPN</li>
         <li>Wait 10 seconds</li>
         <li>Refresh the page</li>
       </ol>
+    <script>
+      setInterval(() => {
+        fetch(window.location.href)
+              .then(res => res.text())
+              .then(txt => if(!txt.includes("subduing-until-stung")) {
+                window.location.reload();
+              })
+              .catch(err => console.error('Error:', err));
+      }, 5000);
+    </script>
   </body>
 </html>
