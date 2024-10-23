@@ -19,7 +19,7 @@
       </ol>
     <script>
       setInterval(() => {
-        fetch(window.location.href)
+        fetch(`${window.location.href}?_=${Math.random()}`)
               .then(res => res.text())
               .then(txt => { 
                 if(!txt.includes("subduing-until-stung")) {
